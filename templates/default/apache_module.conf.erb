@@ -1,0 +1,4 @@
+LoadModule signalsciences_module <%= "#{node['signalsciences']['apache_module_path']}/mod_signalsciences.so" %>
+<% if not node['signalsciences']['rpc_address'].empty? %>
+AgentHost <%= node['signalsciences']['rpc_address'].gsub(/^unix:/, '') %>
+<% end %>

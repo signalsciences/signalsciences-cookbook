@@ -1,0 +1,13 @@
+accesskeyid = "<%= node['signalsciences']['access_key'] %>"
+secretaccesskey = "<%= node['signalsciences']['secret'] %>"
+<% if not node['signalsciences']['rpc_address'].empty? %>
+rpc-address = "<%= node['signalsciences']['rpc_address'] %>"
+<% end %>
+<% if not node['signalsciences']['client_ip_header'].empty? %>
+client-ip-header = "<%= node['signalsciences']['client_ip_header'] %>"
+<% end %>
+<% node['signalsciences']['debug'].each do |flag, val| %>
+<% if val > 0 %>
+debug-<%= flag %> = <%= val %>
+<% end %>
+<% end %>
