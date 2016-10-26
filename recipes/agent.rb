@@ -16,11 +16,11 @@ if node['signalsciences']['access_key'].empty? || node['signalsciences']['secret
 end
 
 # if auto_update is enabled package action will be set to upgrade
-if node['signalsciences']['agent_auto_update']
-  install_action = :upgrade
-else
-  install_action = :install
-end
+install_action = if node['signalsciences']['agent_auto_update']
+                   :upgrade
+                 else
+                   :install
+                 end
 
 # installs the sigsci-agent package and pins version if agent_version is set
 package 'sigsci-agent' do

@@ -11,11 +11,11 @@
 include_recipe 'signalsciences::common'
 
 # if auto_update is enabled package action will be set to upgrade
-if node['signalsciences']['nginx_lua_auto_update']
-  install_action = :upgrade
-else
-  install_action = :install
-end
+install_action = if node['signalsciences']['nginx_lua_auto_update']
+                   :upgrade
+                 else
+                   :install
+                 end
 
 # installs the sigsci-agent package and pins version if agent_version is set
 package 'sigsci-nginx-lua-module' do

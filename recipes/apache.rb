@@ -10,11 +10,11 @@
 include_recipe 'signalsciences::common'
 
 # by default install the package unless auto_update is enabled
-if node['signalsciences']['apache_module_auto_update']
-  pkg_action = :upgrade
-else
-  pkg_action = :install
-end
+pkg_action = if node['signalsciences']['apache_module_auto_update']
+               :upgrade
+             else
+               :install
+             end
 
 package 'sigsci-module-apache' do
   unless node['signalsciences']['apache_module_version'].empty?
