@@ -12,12 +12,7 @@ describe port(80) do
 end
 
 describe port(443) do
-  it { should be_listening }
-  its('protocols') { should include 'tcp' }
-end
-
-describe sshd_config do
-  its('Ciphers') { should eq('chacha20-poly1305@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr') }
+  it { should_not be_listening }
 end
 
 describe yaml('.kitchen.yml') do

@@ -1,43 +1,44 @@
 # signalsciences
 
-TODO: Enter one line description of the cookbook here.
+The signalsciences cookbook installs and configures Signal Sciences in your infrastructure.
 
 ## SCOPE
 
-TODO: Enter a description of the scope of this cookbook, if you
-need an example the [mysql](https://github.com/chef-cookbooks/mysql) cookbook
-is a good place to start.
+This cookbook is intended to install Signal Sciences agent and module.
 
 ## Requirements
 
-TODO: Enter any requirements for the coobook.
+* RHEL
+* Centos
+* Ubuntu
+* Debian
 
 ## Dependancies
 
-TODO: Enter any other cookbooks or ruby libraries for this cookbook.
+* apt cookbook
 
 ## Usage
 
-TODO: Enter specific useage instructions for this cookbook.
+Include this cookbook in your runlist and make sure you set these attributes.
+
+### Required Attributes
+| Key | Description |
+| --- | ----------- |
+| `['signalsciences']['access_key']` | Your site access key token |
+| `['signalsciecnes']['secret']`     | Your site secret token |
 
 ## Testing
 
 For more details look at the [TESTING.md](./TESTING.md).
 
-TODO: Enter any specific instructions for Testing this cookbook.
-
-## Resources
-
-TODO: Document any [Custom Resources](https://docs.chef.io/custom_resources.html) that this cookbook may provide.
-
 ## License & Authors
 
-If you would like to see the detailed LICENCE click [here](./LICENCE).
+If you would like to see the detailed LICENSE click [here](./LICENSE).
 
-- Author:: The Authors <you@example.com>
+- Author:: Signal Sciences Corp. <info@example.com>
 
 ```text
-Copyright:: The Authors
+Copyright:: Signal Sciences Corp.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
