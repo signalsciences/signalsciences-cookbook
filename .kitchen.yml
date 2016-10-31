@@ -11,10 +11,13 @@ verifier:
 
 platforms:
   - name: ubuntu-14.04
-  - name: centos-7.2
 
 suites:
   - name: default
     run_list:
-      - recipe[signalsciences::default]
+      - recipe[signalsciences::agent]
     attributes:
+      signalsciences:
+        access_key: <%= ENV['SIGSCI_AGENT_ACCESS_KEY'] %>
+        secret: <%= ENV['SIGSCI_AGENT_SECRET'] %>
+        agent_auto_update: true
