@@ -37,7 +37,7 @@ For more details look at the [TESTING.md](./TESTING.md).
 
 If you would like to see the detailed LICENSE click [here](./LICENSE).
 
-- Author:: Signal Sciences Corp. <info@example.com>
+- Author:: Signal Sciences Corp. <support@signalsciences.com>
 
 ```text
 Copyright:: Signal Sciences Corp.
