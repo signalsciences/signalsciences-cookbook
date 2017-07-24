@@ -15,7 +15,7 @@ This cookbook is intended to install Signal Sciences agent and module.
 * Ubuntu
 * Debian
 
-## Dependancies
+## Dependencies
 
 * apt cookbook
 
