@@ -1,8 +1,6 @@
 Contributing
 ============
 
-TODO: Fill out your contributing process, or just stick with the default.
-
 Steps
 -----
 
