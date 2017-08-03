@@ -1,12 +1,10 @@
 Contributing
 ============
 
-TODO: Fill out your contributing process, or just stick with the default.
-
 Steps
 -----
 
-Thanks for your interest in signalsciences! If you'd like to help out please:
+Thanks for your interest in Signal Sciences! If you'd like to help out please:
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
