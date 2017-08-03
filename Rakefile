@@ -18,7 +18,7 @@ namespace :style do
       fail_tags: ['any'],
       tags: [
         '~FC005',
-        '~FC023'
+        '~FC023',
       ]
     }
   end
