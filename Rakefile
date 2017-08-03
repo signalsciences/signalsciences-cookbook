@@ -19,7 +19,7 @@ namespace :style do
       tags: [
         '~FC005',
         '~FC023',
-      ]
+      ],
     }
   end
 end
