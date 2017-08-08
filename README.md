@@ -27,7 +27,7 @@ Include this cookbook in your runlist and make sure you set these attributes.
 | Key | Description |
 | --- | ----------- |
 | `['signalsciences']['access_key']` | Your site access key token |
-| `['signalsciecnes']['secret']`     | Your site secret token |
+| `['signalsciences']['secret']`     | Your site secret token |
 
 ## Testing
 
