@@ -1,6 +1,6 @@
 # signalsciences
 
-[![Build Status](https://jenkins-01.eastus.cloudapp.azure.com/job/signalsciences-cookbook/badge/icon)](https://jenkins-01.eastus.cloudapp.azure.com/job/signalsciences-cookbook/)
+[![Build Status](http://jenkins-01.eastus.cloudapp.azure.com/job/signalsciences-cookbook/badge/icon)](http://jenkins-01.eastus.cloudapp.azure.com/job/signalsciences-cookbook/)
 
 The signalsciences cookbook installs and configures Signal Sciences in your infrastructure.
 
