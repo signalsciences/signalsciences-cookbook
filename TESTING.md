@@ -11,11 +11,11 @@ into the parent directory of this cookbook and running "bundle install"
 
 Rakefile
 --------
-The Rakefile ships with a number of tasks, each of which can be ran
+The Rakefile ships with a number of tasks, each of which can be run
 individually, or in groups. Typing "rake" by itself will perform style
 checks with Rubocop and Foodcritic, ChefSpec with rspec, and
 integration with Test Kitchen using the Vagrant driver by
-default.Alternatively, integration tests can be ran with Test Kitchen
+default. Alternatively, integration tests can be run with Test Kitchen
 cloud drivers.
 
 ```
@@ -61,7 +61,7 @@ Integration Testing
 Integration testing is performed by Test Kitchen. Test Kitchen will
 use either the Vagrant driver or various cloud drivers to instantiate
 machines and apply cookbooks. After a successful converge, tests are
-uploaded and ran out of band of Chef. Tests should be designed to
+uploaded and run out of band of Chef. Tests should be designed to
 ensure that a recipe has accomplished its goal.
 
 Integration Testing using Vagrant
@@ -83,8 +83,8 @@ Integration Testing using Cloud providers
 -----------------------------------------
 Integration tests can be performed on cloud providers using
 Test Kitchen plugins. This cookbook ships a ```.kitchen.cloud.yml```
-that references environmental variables present in the shell that
-```kitchen test``` is ran from. These usually contain authentication
+that references environment variables present in the shell that
+```kitchen test``` is run from. These usually contain authentication
 tokens for driving IaaS APIs, as well as the paths to ssh private keys
 needed for Test Kitchen log into them after they've been created.
 
