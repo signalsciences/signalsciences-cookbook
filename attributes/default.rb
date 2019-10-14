@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ## ------------------------------------------------------------------
 ## AGENT CONFIGURATION
 # ------------------------------------------------------------------
@@ -21,7 +23,7 @@ default['signalsciences']['rpc_address'] = ''
 default['signalsciences']['debug'] = {
   'log-web-inputs' => 0,
   'log-web-outputs' => 0,
-  'log-uploads' => 0,
+  'log-uploads' => 0
 }
 
 ## ------------------------------------------------------------------

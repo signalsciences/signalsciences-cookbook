@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'chefspec'
 require 'chefspec/berkshelf'
 
@@ -8,5 +10,5 @@ UBUNTU_OPTS = {
   platform: 'ubuntu',
   version: '14.04',
   log_level: LOG_LEVEL,
-  file_cache_path: '/tmp',
+  file_cache_path: '/tmp'
 }.freeze

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook Name:: signalsciences
 # Recipe:: agent
@@ -23,32 +25,57 @@ install_action = if node['signalsciences']['agent_auto_update']
                  end
 
 # installs the sigsci-agent package and pins version if agent_version is set
-package 'sigsci-agent' do
-  unless node['signalsciences']['agent_version'].empty?
-    version node['signalsciences']['agent_version']
+if platform_family?('rhel', 'debian')
+  package 'sigsci-agent' do
+    unless node['signalsciences']['agent_version'].empty?
+      version node['signalsciences']['agent_version']
+    end
+    action install_action
+    notifies :restart, 'service[sigsci-agent]', :delayed
   end
-  action install_action
-  notifies :restart, 'service[sigsci-agent]', :delayed
-end
 
-directory '/etc/sigsci' do
-  mode 0755
-end
-
-template '/etc/sigsci/agent.conf' do
-  source 'agent.conf.erb'
-  sensitive true
-  mode 0644
-  notifies :restart, 'service[sigsci-agent]', :immediately
-end
-
-service 'sigsci-agent' do
-  # workaround for chef-client 11 handling of upstart services
-  if node['platform_family'] == 'rhel' && node['platform_version'] =~ /^6/
-    provider Chef::Provider::Service::Upstart
+  directory '/etc/sigsci' do
+    mode 0o755
   end
-  if node['platform_family'] == 'debian' && node['platform_version'] =~ /^1[24]/
-    provider Chef::Provider::Service::Upstart
+
+  template '/etc/sigsci/agent.conf' do
+    source 'agent.conf.erb'
+    sensitive true
+    mode 0o644
+    notifies :restart, 'service[sigsci-agent]', :immediately
   end
-  action [:enable, :start]
+
+  service 'sigsci-agent' do
+    # workaround for chef-client 11 handling of upstart services
+    if node['platform_family'] == 'rhel' && node['platform_version'] =~ /^6/
+      provider Chef::Provider::Service::Upstart
+    end
+    if node['platform_family'] == 'debian' && node['platform_version'] =~ /^1[24]/
+      provider Chef::Provider::Service::Upstart
+    end
+    action %i[enable start]
+  end
+elsif platform_family?('windows')
+  directory 'C:\Program Files\Signal Sciences\Agent' do
+    mode 0o755
+    recursive true
+    action :create
+  end
+
+  template 'C:\Program Files\Signal Sciences\Agent\agent.conf' do
+    source 'agent.conf.erb'
+    mode 0o755
+  end
+
+  windows_package 'sigsci-agent_latest.msi' do
+    source 'https://dl.signalsciences.net/sigsci-agent/sigsci-agent_latest.msi'
+    action :install
+  end
+
+  windows_service 'sigsci-agent' do
+    action :start
+  end
+else
+  warn "Signal Sciences applications aren't supported on this platform"
+  return
 end

@@ -1,12 +1,11 @@
-# encoding: utf-8
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
 
 gem 'berkshelf'
 gem 'chefspec'
-gem 'foodcritic'
-gem 'rubocop'
-gem 'rake'
-gem 'test-kitchen'
 gem 'cookstyle'
+gem 'foodcritic'
+gem 'rake'
+gem 'rubocop', require: false
+gem 'test-kitchen'

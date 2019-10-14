@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook Name:: signalsciences
 # Recipe:: apache24
@@ -28,5 +30,5 @@ template "#{conf_path}/sigsci.conf" do
   source 'apache_module.conf.erb'
   owner 'root'
   group 'root'
-  mode 0644
+  mode 0o644
 end
