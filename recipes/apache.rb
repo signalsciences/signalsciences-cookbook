@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 #
-# Cookbook Name:: signalsciences
+# Cookbook:: signalsciences
 # Recipe:: apache24
 #
-# Copyright (C) 2016 Signal Sciences Corp.
+# Copyright:: (C) 2016 Signal Sciences Corp.
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -19,9 +19,7 @@ pkg_action = if node['signalsciences']['apache_module_auto_update']
              end
 
 package 'sigsci-module-apache' do
-  unless node['signalsciences']['apache_module_version'].empty?
-    version node['signalsciences']['apache_module_version']
-  end
+  version node['signalsciences']['apache_module_version'] unless node['signalsciences']['apache_module_version'].empty?
   action pkg_action
 end
 
@@ -30,5 +28,5 @@ template "#{conf_path}/sigsci.conf" do
   source 'apache_module.conf.erb'
   owner 'root'
   group 'root'
-  mode 0o644
+  mode '0644'
 end

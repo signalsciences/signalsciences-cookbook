@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 #
-# Cookbook Name:: signalsciences
+# Cookbook:: signalsciences
 # Recipe:: rhel
 #
-# Copyright (C) 2016 Signal Sciences Corp.
+# Copyright:: (C) 2016 Signal Sciences Corp.
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -13,9 +13,7 @@ dist_release = node['platform_version'].gsub(/^(\d)\..*/, '\1')
 
 # workaround for apache httpd under systemd. Under systemd httpd runs with
 # private tmp enabled by default so we can't see our unix domain socket
-if dist_release == '7' && node['signalsciences']['rpc_address'].empty?
-  node.default['signalsciences']['rpc_address'] = 'unix:/var/run/sigsci-lua'
-end
+node.default['signalsciences']['rpc_address'] = 'unix:/var/run/sigsci-lua' if dist_release == '7' && node['signalsciences']['rpc_address'].empty?
 
 template '/etc/yum.repos.d/sigsci-release.repo' do
   source 'yum.sigsci-release.repo.erb'
