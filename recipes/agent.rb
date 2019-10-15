@@ -62,7 +62,7 @@ elsif platform_family?('windows')
   end
 
   windows_package 'sigsci-agent_latest.msi' do
-    source 'https://dl.signalsciences.net/sigsci-agent/sigsci-agent_latest.msi'
+    source node['signalsciences']['windows_agent_source']
     action :install
   end
 

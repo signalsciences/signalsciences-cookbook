@@ -49,3 +49,9 @@ default['signalsciences']['nginx_lua_module_auto_update'] = false
 # auto update configuration options
 default['signalsciences']['cache_refresh_interval'] = 3600 # seconds
 default['signalsciences']['cache_sentinel_file'] = '/tmp/sigsci-repo.next_cache_refresh'
+
+## ------------------------------------------------------------------
+## WINDOWS PACKAGE CONFIG
+## ------------------------------------------------------------------
+default['signalsciences']['windows_agent_source'] = 'https://dl.signalsciences.net/sigsci-agent/sigsci-agent_latest.msi'
+default['signalsciences']['windows_iis_module_source'] = 'https://dl.signalsciences.net/sigsci-module-iis/sigsci-module-iis_latest.msi'

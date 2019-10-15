@@ -12,6 +12,6 @@ windows_feature 'Web-Server' do
 end
 
 windows_package 'sigsci-module-iis_latest.msi' do
-  source 'https://dl.signalsciences.net/sigsci-module-iis/sigsci-module-iis_latest.msi'
+  source node['signalsciences']['windows_iis_module_source']
   action :install
 end
