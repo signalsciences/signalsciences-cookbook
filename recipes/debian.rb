@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 #
-# Cookbook Name:: signalsciences
+# Cookbook:: signalsciences
 # Recipe:: ubuntu
 #
-# Copyright (C) 2016 Signal Sciences Corp.
+# Copyright:: (C) 2016 Signal Sciences Corp.
 #
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'apt'
+apt_update
 
 package 'apt-transport-https'
 

@@ -1,6 +1,6 @@
 Layout/AccessModifierIndentation:
   Enabled: true
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Enabled: true
 Style/Alias:
   Enabled: true
@@ -16,7 +16,7 @@ Style/ArrayJoin:
   Enabled: true
 Style/AsciiComments:
   Enabled: true
-Style/AsciiIdentifiers:
+Naming/AsciiIdentifiers:
   Enabled: true
 Style/Attr:
   Enabled: true
@@ -38,7 +38,7 @@ Layout/CaseIndentation:
   Enabled: true
 Style/CharacterLiteral:
   Enabled: true
-Style/ClassAndModuleCamelCase:
+Naming/ClassAndModuleCamelCase:
   Enabled: true
 Style/ClassAndModuleChildren:
   Enabled: true
@@ -60,7 +60,7 @@ Layout/CommentIndentation:
   Enabled: true
 Style/ConditionalAssignment:
   Enabled: true
-Style/ConstantName:
+Naming/ConstantName:
   Enabled: true
 Style/DefWithParentheses:
   Enabled: true
@@ -102,15 +102,15 @@ Style/EvenOdd:
   Enabled: true
 Layout/ExtraSpacing:
   Enabled: true
-Style/FileName:
+Naming/FileName:
   Enabled: true
 Style/FrozenStringLiteralComment:
   Enabled: true
 Layout/InitialIndentation:
   Enabled: true
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   Enabled: true
-Style/FlipFlop:
+Lint/FlipFlop:
   Enabled: true
 Style/For:
   Enabled: true
@@ -134,11 +134,11 @@ Layout/IndentationWidth:
   Enabled: true
 Style/IdenticalConditionalBranches:
   Enabled: true
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   Enabled: true
 Layout/IndentAssignment:
   Enabled: true
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   Enabled: true
 Style/InfiniteLoop:
   Enabled: true
@@ -154,7 +154,7 @@ Style/MethodCallWithoutArgsParentheses:
   Enabled: true
 Style/MethodDefParentheses:
   Enabled: true
-Style/MethodName:
+Naming/MethodName:
   Enabled: true
 Style/ModuleFunction:
   Enabled: true
@@ -194,7 +194,7 @@ Style/NumericLiterals:
   Enabled: true
 Style/OneLineConditional:
   Enabled: true
-Style/OpMethod:
+Naming/BinaryOperatorParameterName:
   Enabled: true
 Style/OptionalArguments:
   Enabled: true
@@ -208,7 +208,7 @@ Style/PercentQLiterals:
   Enabled: true
 Style/PerlBackrefs:
   Enabled: true
-Style/PredicateName:
+Naming/PredicateName:
   Enabled: true
 Style/Proc:
   Enabled: true
@@ -272,7 +272,9 @@ Layout/SpaceAroundKeyword:
   Enabled: true
 Layout/SpaceAroundOperators:
   Enabled: true
-Layout/SpaceInsideBrackets:
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+Layout/SpaceInsideReferenceBrackets:
   Enabled: true
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: true
@@ -302,7 +304,7 @@ Layout/TrailingBlankLines:
   Enabled: true
 Style/TrailingCommaInArguments:
   Enabled: true
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
   Enabled: true
 Layout/TrailingWhitespace:
   Enabled: true
@@ -320,7 +322,7 @@ Style/TrailingUnderscoreVariable:
   Enabled: true
 Style/VariableInterpolation:
   Enabled: true
-Style/VariableName:
+Naming/VariableName:
   Enabled: true
 Style/WhenThen:
   Enabled: true
@@ -356,15 +358,15 @@ Lint/AmbiguousRegexpLiteral:
   Enabled: true
 Lint/AssignmentInCondition:
   Enabled: true
-Lint/BlockAlignment:
+Layout/BlockAlignment:
   Enabled: true
 Lint/CircularArgumentReference:
   Enabled: true
-Lint/ConditionPosition:
+Layout/ConditionPosition:
   Enabled: true
 Lint/Debugger:
   Enabled: true
-Lint/DefEndAlignment:
+Layout/DefEndAlignment:
   Enabled: true
 Lint/DeprecatedClassMethods:
   Enabled: true
@@ -380,7 +382,7 @@ Lint/EmptyEnsure:
   Enabled: true
 Lint/EmptyInterpolation:
   Enabled: true
-Lint/EndAlignment:
+Layout/EndAlignment:
   Enabled: true
 Lint/EndInMethod:
   Enabled: true
@@ -398,9 +400,7 @@ Lint/ImplicitStringConcatenation:
   Enabled: true
 Lint/IneffectiveAccessModifier:
   Enabled: true
-Lint/InvalidCharacterLiteral:
-  Enabled: true
-Lint/LiteralInCondition:
+Lint/LiteralAsCondition:
   Enabled: true
 Lint/LiteralInInterpolation:
   Enabled: true
@@ -426,7 +426,7 @@ Lint/StringConversionInInterpolation:
   Enabled: true
 Lint/UnderscorePrefixedVariableName:
   Enabled: true
-Lint/UnneededDisable:
+Lint/UnneededCopDisableDirective:
   Enabled: true
 Lint/UnusedBlockArgument:
   Enabled: true
@@ -448,68 +448,7 @@ Lint/Void:
   Enabled: true
 Performance/Casecmp:
   Enabled: true
-Performance/CaseWhenSplat:
+Style/RedundantSortBy:
   Enabled: true
-Performance/Count:
-  Enabled: true
-Performance/Detect:
-  Enabled: true
-Performance/DoubleStartEndWith:
-  Enabled: true
-Performance/EndWith:
-  Enabled: true
-Performance/FixedSize:
-  Enabled: true
-Performance/FlatMap:
-  Enabled: true
-  EnabledForFlattenWithoutParams: false
-Performance/HashEachMethods:
-  Enabled: true
-Performance/LstripRstrip:
-  Enabled: true
-Performance/RangeInclude:
-  Enabled: true
-Performance/RedundantBlockCall:
-  Enabled: true
-Performance/RedundantMatch:
-  Enabled: true
-Performance/RedundantMerge:
-  Enabled: true
-Performance/RedundantSortBy:
-  Enabled: true
-Performance/ReverseEach:
-  Enabled: true
-Performance/Sample:
-  Enabled: true
-Performance/Size:
-  Enabled: true
-Performance/StartWith:
-  Enabled: true
-Performance/StringReplacement:
-  Enabled: true
-Performance/TimesMap:
-  Enabled: true
-Rails/ActionFilter:
-  Enabled: true
-Rails/Date:
-  Enabled: true
-Rails/Delegate:
-  Enabled: true
-Rails/FindBy:
-  Enabled: true
-Rails/FindEach:
-  Enabled: true
-Rails/HasAndBelongsToMany:
-  Enabled: true
-Rails/Output:
-  Enabled: true
-Rails/PluralizationGrammar:
-  Enabled: true
-Rails/ReadWriteAttribute:
-  Enabled: true
-Rails/ScopeArgs:
-  Enabled: true
-Rails/TimeZone:
-  Enabled: true
-Rails/Validation:
+Style/Sample:
   Enabled: true

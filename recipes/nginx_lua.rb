@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 #
-# Cookbook Name:: signalsciences
+# Cookbook:: signalsciences
 # Recipe:: nginx-lua
 #
-# Copyright (C) 2016 Signal Sciences Corp.
+# Copyright:: (C) 2016 Signal Sciences Corp.
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -19,8 +21,6 @@ install_action = if node['signalsciences']['nginx_lua_auto_update']
 
 # installs the sigsci-agent package and pins version if agent_version is set
 package 'sigsci-nginx-lua-module' do
-  unless node['signalsciences']['nginx_lua_module_version'].empty?
-    version node['signalsciences']['nginx_lua_module_version']
-  end
+  version node['signalsciences']['nginx_lua_module_version'] unless node['signalsciences']['nginx_lua_module_version'].empty?
   action install_action
 end

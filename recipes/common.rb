@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 #
-# Cookbook Name:: signalsciences
+# Cookbook:: signalsciences
 # Recipe:: common
 #
-# Copyright (C) 2016 Signal Sciences Corp.
+# Copyright:: (C) 2016 Signal Sciences Corp.
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -12,6 +14,8 @@ when 'rhel'
   include_recipe 'signalsciences::rhel'
 when 'debian'
   include_recipe 'signalsciences::debian'
+when 'windows'
+  include_recipe 'signalsciences::iis'
 else
   warn "Signal Sciences applications aren't supported on this platform"
   return
